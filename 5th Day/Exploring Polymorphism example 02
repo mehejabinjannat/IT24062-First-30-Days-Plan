@@ -1,0 +1,34 @@
+class Shape {
+    void draw() {
+        System.out.println("Drawing a shape");
+    }
+}
+
+class Circle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a Circle");
+    }
+}
+
+class Rectangle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a Rectangle");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Parent class reference
+        Shape myShape;
+
+        // Circle অবজেক্টের জন্য
+        myShape = new Circle();
+        myShape.draw();
+
+        // Rectangle অবজেক্টের জন্য
+        myShape = new Rectangle();
+        myShape.draw();
+    }
+}
