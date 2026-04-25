@@ -1,0 +1,25 @@
+interface Payment {
+    void pay(double amount);
+}
+
+class Bkash implements Payment {
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " TK using Bkash.");
+    }
+}
+
+class Card implements Payment {
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " TK using Credit Card.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Payment method1 = new Bkash();
+        Payment method2 = new Card();
+
+        method1.pay(500.0);
+        method2.pay(1200.0);
+    }
+}
