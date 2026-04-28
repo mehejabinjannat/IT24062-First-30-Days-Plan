@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+
+public class ArrayListAdvance {
+    public static void main(String[] args) {
+        ArrayList<String> colors = new ArrayList<>();
+
+        colors.add("Red");
+        colors.add("Green");
+        colors.add("Blue");
+
+        colors.set(1, "Yellow");
+
+        int listSize = colors.size();
+        System.out.println("Total colors: " + listSize);
+
+        boolean hasBlue = colors.contains("Blue");
+        System.out.println("Contains Blue? " + hasBlue);
+
+        System.out.println("Updated List: " + colors);
+
+        colors.clear();
+        System.out.println("List after clear: " + colors);
+    }
+}
