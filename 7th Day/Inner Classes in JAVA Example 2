@@ -1,0 +1,32 @@
+class University {
+    private String universityName;
+
+    public University(String name) {
+        this.universityName = name;
+    }
+
+    class Student {
+        private String studentName;
+        private int studentId;
+
+        public Student(String name, int id) {
+            this.studentName = name;
+            this.studentId = id;
+        }
+
+        public void showDetails() {
+            System.out.println("University: " + universityName);
+            System.out.println("Student Name: " + studentName);
+            System.out.println("Student ID: " + studentId);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        University myUni = new University("Dhaka University");
+        University.Student myStudent = myUni.new Student("Rahat", 101);
+
+        myStudent.showDetails();
+    }
+}
