@@ -1,0 +1,19 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class CustomerServiceQueue {
+    public static void main(String[] args) {
+        Queue<String> customerQueue = new LinkedList<>();
+
+        customerQueue.offer("Customer 1");
+        customerQueue.offer("Customer 2");
+        customerQueue.offer("Customer 3");
+
+        System.out.println("Current Customer Queue: " + customerQueue);
+
+        String servedCustomer = customerQueue.poll();
+        System.out.println("Serving: " + servedCustomer);
+
+        System.out.println("Customer Queue after serving one: " + customerQueue);
+    }
+}
