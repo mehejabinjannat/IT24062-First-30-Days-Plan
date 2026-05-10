@@ -1,0 +1,21 @@
+Topic 1: Creating a Directory using Java NIO
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.io.IOException;
+
+public class CreateDirectoryNIO {
+    public static void main(String[] args) {
+        
+        Path path = Paths.get("Projects/NioExample");
+        
+        try {
+            Path createdDir = Files.createDirectories(path);
+            System.out.println("Directory created successfully: " + createdDir.toString());
+        } catch (IOException e) {
+            System.err.println("Failed to create directory: " + e.getMessage());
+        }
+        
+    }
+}
