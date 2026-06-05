@@ -1,0 +1,10 @@
+import java.time.ZonedDateTime;
+import java.time.ZoneId;
+
+public class ZonedDateTimeExample {
+    public static void main(String[] args) {
+        ZonedDateTime newYorkTime = ZonedDateTime.now(ZoneId.of("America/New_York"));
+        
+        System.out.println("Current Date and Time in New York: " + newYorkTime);
+    }
+}
