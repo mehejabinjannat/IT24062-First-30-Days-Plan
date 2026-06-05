@@ -1,0 +1,25 @@
+import java.time.ZonedDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+
+public class ConferenceScheduler {
+    public static void main(String[] args) {
+        ZonedDateTime meetingTimeUTC = ZonedDateTime.parse("2024-12-30T15:00:00Z");
+        
+        String[] participantTimeZones = {
+            "America/New_York",
+            "Europe/London",
+            "Asia/Dhaka"
+        };
+        
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm (z)");
+        
+        System.out.println("Meeting Time in UTC: " + meetingTimeUTC.format(formatter));
+        System.out.println("---------------------------------------------------------");
+        
+        for (String zoneId : participantTimeZones) {
+            ZonedDateTime localMeetingTime = meetingTimeUTC.withZoneSameInstant(ZoneId.of(zoneId));
+            System.out.println("Meeting Time in " + zoneId + ": " + localMeetingTime.format(formatter));
+        }
+    }
+}
